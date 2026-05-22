@@ -1,3 +1,5 @@
+"use client";
+
 import { Navbar } from "@/components/navbar/Navbar";
 import { HeroSection } from "@/components/hero/HeroSection";
 import { Section2 } from "@/components/sections/Section2";
@@ -9,10 +11,11 @@ import { Section7 } from "@/components/sections/Section7";
 import { Section8 } from "@/components/sections/Section8";
 import { Section9 } from "@/components/sections/Section9";
 import { FooterSection } from "@/components/sections/FooterSection";
+import { QRModalProvider } from "@/components/providers/QRModalProvider";
 
 export function LandingPage() {
   return (
-    <>
+    <QRModalProvider>
       <Navbar />
       <main>
         <HeroSection />
@@ -26,6 +29,6 @@ export function LandingPage() {
         <Section9 />
       </main>
       <FooterSection />
-    </>
+    </QRModalProvider>
   );
 }
