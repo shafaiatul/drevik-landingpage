@@ -41,6 +41,11 @@
   --radius-drevik-button: 0.875rem;
 }
 
+html,
+body {
+  overflow-x: hidden;
+}
+
 html {
   scroll-behavior: smooth;
 }
