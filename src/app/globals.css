@@ -1,0 +1,122 @@
+@import "tailwindcss";
+
+:root {
+  --drevik-primary: #223436;
+  --drevik-black: #0b0f10;
+  --drevik-bg: #fcFEFE;
+  --drevik-bg-alt: #f1f7f6;
+  --drevik-border: #d8e7e2;
+  --drevik-success-bg: #dff2ea;
+  --drevik-success: #1f6b4a;
+  --drevik-warn-bg: #f7efd0;
+  --drevik-warn: #7a5b00;
+  --drevik-danger-bg: #f5dcdc;
+  --drevik-danger: #7a1e1e;
+  --drevik-text-muted: rgba(34, 52, 54, 0.8);
+  --drevik-text-subtle: rgba(34, 52, 54, 0.6);
+}
+
+@theme inline {
+  --color-drevik-primary: var(--drevik-primary);
+  --color-drevik-black: var(--drevik-black);
+  --color-drevik-bg: var(--drevik-bg);
+  --color-drevik-bg-alt: var(--drevik-bg-alt);
+  --color-drevik-border: var(--drevik-border);
+  --color-drevik-success-bg: var(--drevik-success-bg);
+  --color-drevik-success: var(--drevik-success);
+  --color-drevik-warn-bg: var(--drevik-warn-bg);
+  --color-drevik-warn: var(--drevik-warn);
+  --color-drevik-danger-bg: var(--drevik-danger-bg);
+  --color-drevik-danger: var(--drevik-danger);
+  --color-drevik-text-muted: var(--drevik-text-muted);
+  --color-drevik-text-subtle: var(--drevik-text-subtle);
+
+  --font-sans: var(--font-inter);
+
+  --shadow-drevik-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-drevik-md: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+  --shadow-drevik-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.08), 0 4px 6px -2px rgba(0, 0, 0, 0.04);
+
+  --radius-drevik-card: 1.5rem;
+  --radius-drevik-button: 0.875rem;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--drevik-bg);
+  color: var(--drevik-black);
+  font-family: var(--font-inter), system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.gradient-primary {
+  background: linear-gradient(
+    135deg,
+    #223436 0%,
+    #223838 7%,
+    #233c39 14%,
+    #233f3b 21%,
+    #23433c 28%,
+    #24473e 35%,
+    #244b3f 42%,
+    #234f40 50%,
+    #235342 57%,
+    #235743 64%,
+    #225b45 71%,
+    #225f46 78%,
+    #216347 85%,
+    #206749 92%,
+    #1f6b4a 100%
+  );
+}
+
+.gradient-success {
+  background: linear-gradient(
+    135deg,
+    #1f6b4a 0%,
+    #206749 7%,
+    #216347 14%,
+    #225f46 21%,
+    #225b45 28%,
+    #235743 35%,
+    #235342 42%,
+    #234f40 50%,
+    #244b3f 57%,
+    #24473e 64%,
+    #23433c 71%,
+    #233f3b 78%,
+    #233c39 85%,
+    #223838 92%,
+    #223436 100%
+  );
+}
+
+.gradient-hero-bg {
+  background:
+    radial-gradient(
+      ellipse 80% 60% at 70% 40%,
+      rgba(223, 242, 234, 0.5) 0%,
+      transparent 70%
+    ),
+    radial-gradient(
+      ellipse 60% 50% at 20% 80%,
+      rgba(241, 247, 246, 0.6) 0%,
+      transparent 60%
+    ),
+    var(--drevik-bg);
+}
+
+.gradient-section-alt {
+  background: linear-gradient(
+    161deg,
+    #f1f7f6 0%,
+    #f4f9f8 25%,
+    #f6fafa 50%,
+    #f9fcfc 75%,
+    #fcFEFE 100%
+  );
+}
