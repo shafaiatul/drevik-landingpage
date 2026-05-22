@@ -6,6 +6,7 @@ import Link from "next/link";
 import { Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { CTAButton } from "@/components/ui/CTAButton";
+import { useQRModal } from "@/components/providers/QRModalProvider";
 
 const navLinks = [
   { label: "Features", href: "#features" },
@@ -18,6 +19,7 @@ const navLinks = [
 export function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileOpen, setIsMobileOpen] = useState(false);
+  const { openModal } = useQRModal();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -74,8 +76,11 @@ export function Navbar() {
         </ul>
 
         <div className="hidden lg:block">
-          <CTAButton href="#download" className="px-5 py-2.5 text-sm">
-            Download App
+          <CTAButton
+            onClick={openModal}
+            className="px-5 py-2.5 text-sm"
+          >
+            Get Started
           </CTAButton>
         </div>
 
@@ -117,8 +122,14 @@ export function Navbar() {
               </li>
             ))}
           </ul>
-          <CTAButton href="#download" className="w-full">
-            Download App
+          <CTAButton
+            onClick={() => {
+              setIsMobileOpen(false);
+              openModal();
+            }}
+            className="w-full"
+          >
+            Get Started
           </CTAButton>
         </div>
       </div>

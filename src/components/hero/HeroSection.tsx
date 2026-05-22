@@ -3,10 +3,11 @@
 import { useEffect, useRef } from "react";
 import Image from "next/image";
 import gsap from "gsap";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, QrCode } from "lucide-react";
 import { Badge } from "@/components/ui/Badge";
 import { CTAButton } from "@/components/ui/CTAButton";
 import { SectionWrapper } from "@/components/layout/SectionWrapper";
+import { useQRModal } from "@/components/providers/QRModalProvider";
 
 const headlineLines = [
   "Train smarter.",
@@ -16,6 +17,7 @@ const headlineLines = [
 
 export function HeroSection() {
   const sectionRef = useRef<HTMLDivElement>(null);
+  const { openModal } = useQRModal();
   const badgeRef = useRef<HTMLDivElement>(null);
   const headlineRef = useRef<HTMLHeadingElement>(null);
   const subtextRef = useRef<HTMLParagraphElement>(null);
@@ -141,7 +143,9 @@ export function HeroSection() {
             ref={ctaRef}
             className="flex flex-col gap-3 sm:flex-row sm:items-center"
           >
-            <CTAButton href="#download">Download the App</CTAButton>
+            <CTAButton onClick={openModal} icon={QrCode}>
+              Get Started
+            </CTAButton>
             <CTAButton
               href="#how-it-works"
               variant="secondary"
