@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useRef } from "react";
-import { QrCode } from "lucide-react";
+import { Download, QrCode } from "lucide-react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { SectionWrapper } from "@/components/layout/SectionWrapper";
@@ -62,11 +62,20 @@ export function Section9() {
               equipment, and progress.
             </p>
 
+            <a
+              href="https://drevik.app/download"
+              className={cn(
+                "mt-2 inline-flex h-[68px] items-center gap-3 rounded-2xl bg-white px-10 text-lg font-medium text-drevik-primary shadow-[0_20px_25px_-5px_rgba(0,0,0,0.1),0_8px_10px_-6px_rgba(0,0,0,0.1)] transition-transform duration-200 hover:-translate-y-0.5 hover:shadow-[0_25px_30px_-5px_rgba(0,0,0,0.15)] lg:hidden",
+              )}
+            >
+              <Download className="size-6 shrink-0" strokeWidth={1.5} />
+              Download App
+            </a>
             <button
               type="button"
               onClick={openModal}
               className={cn(
-                "mt-2 inline-flex h-[68px] items-center gap-3 rounded-2xl bg-white px-10 text-lg font-medium text-drevik-primary shadow-[0_20px_25px_-5px_rgba(0,0,0,0.1),0_8px_10px_-6px_rgba(0,0,0,0.1)] transition-transform duration-200 hover:-translate-y-0.5 hover:shadow-[0_25px_30px_-5px_rgba(0,0,0,0.15)]",
+                "mt-2 hidden h-[68px] items-center gap-3 rounded-2xl bg-white px-10 text-lg font-medium text-drevik-primary shadow-[0_20px_25px_-5px_rgba(0,0,0,0.1),0_8px_10px_-6px_rgba(0,0,0,0.1)] transition-transform duration-200 hover:-translate-y-0.5 hover:shadow-[0_25px_30px_-5px_rgba(0,0,0,0.15)] lg:inline-flex",
               )}
             >
               <QrCode className="size-6 shrink-0" strokeWidth={1.5} />

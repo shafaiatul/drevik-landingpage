@@ -9,6 +9,7 @@ type CTAButtonProps = {
   children: React.ReactNode;
   href?: string;
   variant?: "primary" | "secondary";
+  size?: "default" | "lg";
   icon?: LucideIcon | false;
   className?: string;
   onClick?: () => void;
@@ -18,6 +19,7 @@ export function CTAButton({
   children,
   href,
   variant = "primary",
+  size = "default",
   icon: Icon = Download,
   className,
   onClick,
@@ -49,7 +51,17 @@ export function CTAButton({
   };
 
   const baseClasses =
-    "inline-flex items-center justify-center gap-2 rounded-[var(--radius-drevik-button)] px-6 py-3.5 text-sm font-medium transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-drevik-primary/30 focus-visible:ring-offset-2";
+    "inline-flex items-center justify-center rounded-[var(--radius-drevik-button)] transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-drevik-primary/30 focus-visible:ring-offset-2";
+
+  const sizeClasses = {
+    default: "gap-2 px-6 py-3.5 text-sm font-medium",
+    lg: "gap-2.5 px-8 py-4 text-base font-semibold",
+  };
+
+  const iconSizeClasses = {
+    default: "size-4",
+    lg: "size-5",
+  };
 
   const variantClasses = {
     primary:
@@ -58,7 +70,12 @@ export function CTAButton({
       "border border-drevik-border bg-white text-drevik-black shadow-drevik-sm hover:border-drevik-primary/20 hover:bg-drevik-bg-alt",
   };
 
-  const sharedClassName = cn(baseClasses, variantClasses[variant], className);
+  const sharedClassName = cn(
+    baseClasses,
+    sizeClasses[size],
+    variantClasses[variant],
+    className,
+  );
 
   if (useButton) {
     return (
@@ -70,7 +87,12 @@ export function CTAButton({
         onMouseLeave={handleMouseLeave}
         className={sharedClassName}
       >
-        {Icon && <Icon className="size-4 shrink-0" aria-hidden="true" />}
+        {Icon && (
+          <Icon
+            className={cn("shrink-0", iconSizeClasses[size])}
+            aria-hidden="true"
+          />
+        )}
         {children}
       </button>
     );
@@ -85,7 +107,12 @@ export function CTAButton({
       onMouseLeave={handleMouseLeave}
       className={sharedClassName}
     >
-      {Icon && <Icon className="size-4 shrink-0" aria-hidden="true" />}
+      {Icon && (
+        <Icon
+          className={cn("shrink-0", iconSizeClasses[size])}
+          aria-hidden="true"
+        />
+      )}
       {children}
     </a>
   );

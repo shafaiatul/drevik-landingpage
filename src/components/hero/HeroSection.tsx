@@ -3,7 +3,10 @@
 import { useEffect, useRef } from "react";
 import Image from "next/image";
 import gsap from "gsap";
-import { ArrowRight, QrCode } from "lucide-react";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { ArrowRight, Download, QrCode } from "lucide-react";
+
+gsap.registerPlugin(ScrollTrigger);
 import { Badge } from "@/components/ui/Badge";
 import { CTAButton } from "@/components/ui/CTAButton";
 import { SectionWrapper } from "@/components/layout/SectionWrapper";
@@ -97,6 +100,18 @@ export function HeroSection() {
           },
           "-=0.45",
         );
+
+        // Parallax effect for characters on scroll
+        gsap.to(characters, {
+          y: 80,
+          ease: "none",
+          scrollTrigger: {
+            trigger: sectionRef.current,
+            start: "top top",
+            end: "bottom top",
+            scrub: 1,
+          },
+        });
       }
 
     }, sectionRef);
@@ -108,7 +123,7 @@ export function HeroSection() {
     <SectionWrapper
       id="hero"
       background="hero"
-      className="overflow-visible pt-28 md:pt-32 lg:pt-36"
+      className="pt-12 md:pt-32 lg:pt-36"
       as="section"
     >
       <div
@@ -143,9 +158,24 @@ export function HeroSection() {
             ref={ctaRef}
             className="flex flex-col gap-3 sm:flex-row sm:items-center"
           >
-            <CTAButton onClick={openModal} icon={QrCode}>
-              Get Started
+            <CTAButton
+              href="https://drevik.app/download"
+              icon={Download}
+              size="lg"
+              className="w-full shadow-[0_8px_28px_rgba(34,52,54,0.22)] lg:hidden sm:w-auto"
+            >
+              Download App
             </CTAButton>
+            <div className="hidden lg:contents">
+              <CTAButton
+                onClick={openModal}
+                icon={QrCode}
+                size="lg"
+                className="shadow-[0_8px_28px_rgba(34,52,54,0.22)] hover:shadow-[0_12px_36px_rgba(34,52,54,0.28)]"
+              >
+                Get Started
+              </CTAButton>
+            </div>
             <CTAButton
               href="#how-it-works"
               variant="secondary"
@@ -162,7 +192,7 @@ export function HeroSection() {
 
         <div
           ref={visualRef}
-          className="relative mx-auto w-full max-w-[820px] lg:mx-0 lg:max-w-none lg:justify-self-end"
+          className="relative mx-auto mt-16 w-full max-w-[820px] lg:mx-0 lg:mt-0 lg:max-w-none lg:justify-self-end"
         >
           {/* Static decorative gradient behind the phones */}
           <div
