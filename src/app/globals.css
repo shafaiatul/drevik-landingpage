@@ -43,7 +43,7 @@
 
 html,
 body {
-  overflow-x: hidden;
+  /* No global overflow-x: hidden to avoid scrollbar issues with ScrollTrigger */
 }
 
 html {
