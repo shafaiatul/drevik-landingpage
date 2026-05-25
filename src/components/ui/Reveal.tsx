@@ -12,6 +12,7 @@ type RevealProps = {
   delay?: number;
   duration?: number;
   stagger?: number;
+  triggerStart?: string;
   as?: "div" | "section" | "article";
 };
 
@@ -29,6 +30,7 @@ export function Reveal({
   delay = 0,
   duration = 0.7,
   stagger = 0,
+  triggerStart = "top 85%",
   as: Tag = "div",
 }: RevealProps) {
   const ref = useRef<HTMLDivElement>(null);
@@ -58,7 +60,7 @@ export function Reveal({
       ease: "power3.out",
       scrollTrigger: {
         trigger: element,
-        start: "top 85%",
+        start: triggerStart,
         toggleActions: "play none none none",
       },
     });
@@ -67,7 +69,7 @@ export function Reveal({
       animation.scrollTrigger?.kill();
       animation.kill();
     };
-  }, [direction, delay, duration, stagger]);
+  }, [direction, delay, duration, stagger, triggerStart]);
 
   return (
     <Tag ref={ref} className={cn(className)}>
