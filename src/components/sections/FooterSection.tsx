@@ -17,7 +17,7 @@ export function FooterSection() {
   return (
     <footer className="bg-drevik-black text-white">
       <div className="mx-auto max-w-7xl px-6 pt-16 pb-8 md:px-8 lg:px-12 lg:pt-20">
-        <Reveal>
+        <Reveal direction="up" triggerStart="top 100%">
           <div className="grid grid-cols-1 gap-12 lg:grid-cols-12 lg:gap-8">
             {/* Brand Section */}
             <div className="lg:col-span-5">
