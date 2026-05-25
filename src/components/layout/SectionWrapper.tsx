@@ -11,7 +11,7 @@ type SectionWrapperProps = {
 const backgroundClasses = {
   default: "bg-drevik-bg",
   alt: "gradient-section-alt",
-  white: "bg-white",
+  white: "bg-drevik-surface",
   hero: "gradient-hero-bg",
 };
 

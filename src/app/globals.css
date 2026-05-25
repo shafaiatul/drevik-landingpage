@@ -3,9 +3,10 @@
 :root {
   --drevik-primary: #223436;
   --drevik-black: #0b0f10;
-  --drevik-bg: #fcFEFE;
-  --drevik-bg-alt: #f1f7f6;
-  --drevik-border: #d8e7e2;
+  --drevik-bg: #eef2ec;
+  --drevik-bg-alt: #e5ede8;
+  --drevik-surface: #f0f4ee;
+  --drevik-border: #c8d8cf;
   --drevik-success-bg: #dff2ea;
   --drevik-success: #1f6b4a;
   --drevik-warn-bg: #f7efd0;
@@ -21,6 +22,7 @@
   --color-drevik-black: var(--drevik-black);
   --color-drevik-bg: var(--drevik-bg);
   --color-drevik-bg-alt: var(--drevik-bg-alt);
+  --color-drevik-surface: var(--drevik-surface);
   --color-drevik-border: var(--drevik-border);
   --color-drevik-success-bg: var(--drevik-success-bg);
   --color-drevik-success: var(--drevik-success);
@@ -103,27 +105,31 @@ body {
 .gradient-hero-bg {
   background:
     radial-gradient(
-      ellipse 80% 60% at 70% 40%,
-      rgba(223, 242, 234, 0.5) 0%,
-      transparent 70%
+      ellipse 65% 50% at 72% 32%,
+      rgba(200, 228, 214, 0.5) 0%,
+      transparent 65%
     ),
     radial-gradient(
-      ellipse 60% 50% at 20% 80%,
-      rgba(241, 247, 246, 0.6) 0%,
-      transparent 60%
+      ellipse 50% 40% at 15% 75%,
+      rgba(210, 225, 216, 0.6) 0%,
+      transparent 58%
     ),
-    var(--drevik-bg);
+    linear-gradient(175deg, #eaf0ea 0%, #e4ece6 50%, #eef2ec 100%);
 }
 
 .gradient-section-alt {
-  background: linear-gradient(
-    161deg,
-    #f1f7f6 0%,
-    #f4f9f8 25%,
-    #f6fafa 50%,
-    #f9fcfc 75%,
-    #fcFEFE 100%
-  );
+  background:
+    radial-gradient(
+      ellipse 65% 40% at 82% 12%,
+      rgba(200, 228, 214, 0.35) 0%,
+      transparent 60%
+    ),
+    radial-gradient(
+      ellipse 45% 35% at 10% 88%,
+      rgba(210, 225, 216, 0.25) 0%,
+      transparent 55%
+    ),
+    linear-gradient(175deg, #e3ece6 0%, #e8efe9 50%, #eef2ec 100%);
 }
 
 .faq-accordion-content[data-state="open"] {

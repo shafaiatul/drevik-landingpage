@@ -25,8 +25,8 @@ export function FooterSection() {
                 <Image
                   src="/images/drevik-logo.png"
                   alt="Drevik"
-                  width={140}
-                  height={36}
+                  width={1803}
+                  height={376}
                   className="h-8 w-auto md:h-9"
                 />
               </Link>

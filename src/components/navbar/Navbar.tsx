@@ -202,8 +202,8 @@ export function Navbar() {
             <Image
               src="/images/drevik-logo.png"
               alt="Drevik"
-              width={120}
-              height={32}
+              width={1803}
+              height={376}
               className="h-7 w-auto md:h-8"
               priority
             />
